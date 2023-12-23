@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HardcodedAuthenticationService } from '../service/hardcoded-authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -7,20 +8,20 @@ import { Router } from '@angular/router';
   styleUrl: './login.component.css'
 })
 export class LoginComponent{
-  username: String = "wl99-human"
-  password = "encrypted"
+  username: string = "wl99-human"
+  password: string = ""
   errorMessage = 'Invalid Credentials'
   invalidLogin = false
 
   //Router
   //Angular.giveMeRouter
   //Dependency Injection
-  constructor(private router: Router) {
+  constructor(private router: Router, public hardcodedAuthenticationService: HardcodedAuthenticationService) {
     //No need declaration like Java
   }
 
   handleLogin() {
-    if (this.username === "wl99-human" && this.password === "dummy") {
+    if (this.hardcodedAuthenticationService.authenticate(this.username, this.password)) {
       //Redirect to Welcome Page
       this.router.navigate(['welcome', this.username])
       this.invalidLogin = false
