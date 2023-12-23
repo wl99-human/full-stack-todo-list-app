@@ -3,13 +3,14 @@
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a routerLink="/welcome/wl99-human" class="nav-link px-2 text-white">Home</a></li>
-          <li><a routerLink="/todos" class="nav-link px-2 text-white">Todos</a></li>
+          <li><a *ngIf="hardcodedAuthenticationService.isUserLoggedIn()" routerLink="/welcome/wl99-human" class="nav-link px-2 text-white">Home</a></li>
+          <li><a *ngIf="hardcodedAuthenticationService.isUserLoggedIn()" routerLink="/todos" class="nav-link px-2 text-white">Todos</a></li>
         </ul>
 
         <div class="text-end">
-            <a routerLink="/login" class="btn btn-outline-light me-2">Login</a>
-            <a routerLink="/sign-up" class="btn btn-warning">Sign-up</a>
+            <a *ngIf="!hardcodedAuthenticationService.isUserLoggedIn()" routerLink="/login" class="btn btn-outline-light me-2">Login</a>
+            <a *ngIf="hardcodedAuthenticationService.isUserLoggedIn()" routerLink="/logout" class="btn btn-outline-light me-2">Logout</a>
+            <a *ngIf="!hardcodedAuthenticationService.isUserLoggedIn()" routerLink="/sign-up" class="btn btn-warning">Sign-up</a>
         </div>
       </div>
     </div>
