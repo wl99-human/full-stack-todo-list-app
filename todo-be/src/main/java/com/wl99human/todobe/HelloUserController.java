@@ -9,4 +9,10 @@ public class HelloUserController {
     public String helloUser() {
         return "Hello User!";
     }
+
+    //hello-user-bean
+    @GetMapping(path = "/hello-user-bean")
+    public HelloUserBean helloUserBean() {
+        return new HelloUserBean("Hello User!");
+    }
 }
