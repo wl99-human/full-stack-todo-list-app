@@ -1,4 +1,4 @@
-package com.wl99human.todobe;
+package com.wl99human.todobe.hellouser;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;

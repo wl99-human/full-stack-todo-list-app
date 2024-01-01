@@ -1,4 +1,4 @@
-package com.wl99human.todobe;
+package com.wl99human.todobe.hellouser;
 
 public class HelloUserBean {
     private String message;
