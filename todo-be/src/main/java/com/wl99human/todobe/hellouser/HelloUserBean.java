@@ -14,7 +14,6 @@ public class HelloUserBean {
         this.message = message;
     }
 
-
     @Override
     public String toString() {
         return "HelloUserBean{" +
