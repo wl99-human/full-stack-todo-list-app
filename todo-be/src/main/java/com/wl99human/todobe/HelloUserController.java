@@ -16,8 +16,8 @@ public class HelloUserController {
     //hello-user-bean
     @GetMapping(path = "/hello-user-bean")
     public HelloUserBean helloUserBean() {
-        throw new RuntimeException("Some Error has Happened! Contact support ***-*****");
-        //return new HelloUserBean("Hello User!");
+        //throw new RuntimeException("Some Error has Happened! Contact support ***-*****");
+        return new HelloUserBean("Hello User!");
     }
 
     @GetMapping(path = "/hello-user/path-variable/{username}")
