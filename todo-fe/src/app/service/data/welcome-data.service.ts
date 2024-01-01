@@ -17,4 +17,8 @@ export class WelcomeDataService {
   executeHelloUserBeanService() {
     return this.http.get<HelloUserBean>('http://localhost:8080/hello-user-bean');
   }
+
+  executeHelloUserBeanServiceWithPathVariable(name: any) {
+    return this.http.get<HelloUserBean>(`http://localhost:8080/hello-user/path-variable/${name}`);
+  }
 }
